@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="qrcode" name="description">
+    <meta content="ThrivingZhang，JingshanMao" name="author">
+    <title>WxiPad™ 调试页面</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+</head>
+
+<div class="page">
+
+    <div class="page-inner">
+        <div class="container">
+            <!-- 页面头部导航 -->
+            <header class="masthead clearfix" role="banner">
+                <nav class="inner" role="navigation">
+                    <h3 class="masthead-brand"><a href="https://gitlab.wxipad.com/"><span
+                            class="glyphicon glyphicon-qrcode"></span></a>Wxipad™</h3>
+                    <ul class="nav masthead-nav">
+                        <li class="active"><a href="index.html">网址</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <title>当前时间</title>
+            <span align="right" id="cg">2016/12/21 上午12:00:00</span>
+            <div class="content">
+                <div class="biaoqian">
+                    <div class="input-group">
+                        <span align="left" class="biaoqian" id="imgBiaoQian">二维码:</span>
+                    </div>
+
+                </div>
+                <div class="biaoqian1">
+                    <div class="input-group">
+                        <span align="left" class="biaoqian" id="tiaoshiBiaoQian">调试输出:</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="ImgBufUrl" id="imgBufUrl"></div>
+                <div class="WechatReturn" id="wechatReturn"></div>
+            </div>
+            <br/>
+            <div class="content">
+                <div class="biaoqian">
+                    <div class="input-group">
+                        <span class="biaoqian">返回内容:</span>
+                    </div>
+                </div>
+                <div class="biaoqian3">
+                    <div class="input-group">
+                        <span class="biaoqian">请求数据 json:</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="GrpcPayLoads">
+                    <textarea class="GrpcPayLoads" cols="77" id="grpcPayLoads" name="grpcPayLoads"
+                              placeholder="请输入 json 格式数据!" value=''></textarea>
+                </div>
+
+                <div class="WechatApiMsg" id="wechatApiMsg">
+                    {"Msg":"","account":"asd","accountAppId":"","accountAppKey":"","accountTocken":"","accountcode":0,"autoLogin":"","callbackAddRes":"127.0.0.1:8874","cmd":502,"cmdname":"","code":0,"grpcBaseMsg":"","grpcPayLoads":"","grpcUser":"","grpcWechatMsg":"","longHost":"","nickName":"","protocolVer":1,"randomId":"","result":0,"serverId":"d0b72c7d34f09f32841e1e624c350b96","serverIp":"","serverPort":0,"shortHost":"","softwareId":"666","timeStamp":0,"userA16":"","userData":"","userName":"","userPassWord":"","userUuid":"","wechatApiId":""}
+                </div>
+
+            </div>
+            <br/>
+            <div class="content">
+                <div class="LeftmostLeft">
+                    <div class="input-group">
+                        <span class="input-group-addon">消息  ID:</span>
+                        <input class="form-control" id="wechatApiId" placeholder="字段名:wechatApiId(消息ID)" type="text"
+                               value="bf6b0d0fb947e940a80d96167cf2b480">
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">数据概要:</span>
+                        <input class="form-control" id="msg" placeholder="字段名:msg(安卓数据)" type="text"
+                               value="获取二维码成功!等待扫码!">
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">Android:</span>
+                        <input class="form-control" id="userA16" placeholder="字段名:userA16(安卓数据)" type="text"
+                               value="A1859a778c5212ef">
+                    </div>
+                </div>
+                <div class="TheMostRight">
+                    <div class="input-group">
+                        <span class="input-group-addon">iOS 数据:</span>
+                        <input class="form-control" id="userData" placeholder="字段名:userData(iOS数据)" type="text"
+                               value="">
+
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="content">
+                <div class="LeftmostLeft">
+                    <div class="input-group">
+                        <span class="input-group-addon">接口  ID:</span>
+                        <input class="form-control" id="cmd" placeholder="字段名:cmd(必填)" type="text" value="502">
+
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">授权账号:</span>
+                        <input class="form-control" id="accountAppId" placeholder="字段名:accountAppId(授权ID)" type="text"
+                               value="v1_xukeoscar_CodeVip">
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">授权Key:</span>
+                        <input class="form-control" id="accountAppKey" placeholder="字段名:accountAppKey(授权Key)"
+                               type="text" value="v2_7b3d44d2ce848751f2f9d27993d93471">
+                    </div>
+                </div>
+                <div class="TheMostRight">
+                    <div class="input-group">
+                        <span class="input-group-addon">授权Code:</span>
+                        <input class="form-control" id="accountTocken" placeholder="字段名:accountTocken(授权Tocken)"
+                               type="text" value="v3_651fc2c44e3a0aced535fa2e5f16dfc6">
+                        <span class="input-group-btn"><button class="btn btn-default" id="SenRquests"
+                                                              onclick="requestInterface()">发送请求</button></span>
+                    </div>
+                </div>
+
+            </div>
+            <br/>
+            <div class="content">
+                <div class="LeftmostLeft">
+                    <div class="input-group">
+                        <span class="input-group-addon">服务  IP:</span>
+                        <input class="form-control" id="serverIp" placeholder="字段名:serverIp(服务器IP)" type="text"
+                               value="127.0.0.1">
+
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">服务端口:</span>
+                        <input class="form-control" id="serverPort" placeholder="字段名:serverPort(服务器端口)" type="text"
+                               value="16425">
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">服务  ID:</span>
+                        <input class="form-control" id="serverId" placeholder="字段名:serverId(服务器ID)"
+                               type="text" value="d0b72c7d34f09f32841e1e624c350b96">
+                    </div>
+                </div>
+                <div class="TheMostRight">
+                    <div class="input-group">
+                        <span class="input-group-addon">回调地址:</span>
+                        <input class="form-control" id="callbackAddRes" placeholder="字段名:callbackAddRes(回调地址)"
+                               type="text" value="127.0.0.1:1234">
+                        <span class="input-group-btn"><button class="btn btn-default" id="getWebSocket"
+                                                              onclick="getWebSocket()">建立连接</button></span>
+                    </div>
+                </div>
+
+            </div>
+            <br/>
+            <div class="content">
+                <div class="LeftmostLeft">
+                    <div class="input-group">
+                        <span class="input-group-addon">用户  ID:</span>
+                        <input class="form-control" id="account" placeholder="字段名:account(用户ID 必填)" type="text"
+                               value="asd">
+
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">协议类型:</span>
+                        <input class="form-control" id="protocolVer" placeholder="字段名:protocolVer(必填)" type="text"
+                               value="1">
+
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">逻辑  ID:</span>
+                        <input class="form-control" id="softwareId" placeholder="字段名:softwareId" type="text"
+                               value="666">
+                    </div>
+                </div>
+                <div class="TheMostRight">
+                    <div class="input-group">
+                        <span class="input-group-addon">操作编号:</span>
+                        <input class="form-control" id="randomId" placeholder="字段名:randomId" type="text"
+                               value="">
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="content">
+                <div class="LeftmostLeft">
+                    <div class="input-group">
+                        <span class="input-group-addon">微信  ID:</span>
+                        <input class="form-control" id="userName" placeholder="字段名:userName(微信账号)" type="text"
+                               value="wxid_klibrur1gznx22">
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">微信昵称:</span>
+                        <input class="form-control" id="nickName" placeholder="字段名:nickName(微信昵称)" type="text"
+                               value="">
+
+                    </div>
+                </div>
+                <div class="Middle">
+                    <div class="input-group">
+                        <span class="input-group-addon">微信  PW:</span>
+                        <input class="form-control" id="userPassWord" placeholder="字段名:userPassWord(微信密码)" type="text"
+                               value="ngyk3920">
+                    </div>
+                </div>
+
+                <div class="TheMostRight">
+                    <div class="input-group">
+                        <span class="input-group-addon">链接地址:</span>
+                        <input class="form-control" id="qrcodeUrl" placeholder="字段名:qrcodeUrl(二维码连接)" type="text">
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div>
+                <!-- 页面页脚 -->
+                <footer class="mastfoot">
+                    <div class="inner">WxiPad™
+                        <p>制作人：阿威</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.qrcode.min.js" type="text/javascript"></script>
+    <script src="js/to-utf8.js" type="text/javascript"></script>
+
+    <script>
+        var oHistory = $('#history');
+        var oWin = $('#messagewin');
+        var ws = null;
+        var code = getWebSocket();
+        //连接发生错误的回调方法
+        ws.onerror = function () {
+            setDebug("WebSocket 连接发生错误")
+        };
+        //连接成功建立的回调方法
+        ws.onopen = function () {
+            setDebug("WebSocket 连接成功")
+        };
+        //接收到消息的回调方法
+        ws.onmessage = function (evt) {
+            ProcessingMessages(evt.data);
+        };
+
+        function ProcessingData(cmd, data) {
+            if (cmd === 502) {
+                if (data.ImgBuf !== null && data.ImgBuf !== '') {
+                    toImage('data:image/png;base64,' + data.ImgBuf)
+                } else {
+                    if (data.ImgBufUrl !== null && data.ImgBufUrl !== "") {
+                        ImgBufUrl = data.ImgBufUrl;
+                    } else if (data.Uuid !== null && data.Uuid !== "") {
+                        ImgBufUrl = "http://weixin.qq.com/x/" + data.Uuid;
+                    }
+                    $('#qrcodeUrl').val(ImgBufUrl);
+                    $("#imgBufUrl").empty();	/*清空 #qrcode*/
+                    $("#imgBufUrl").qrcode(ImgBufUrl);
+                    canvasToImage();
+                }
+            }
+
+            if (cmd === 503) {
+                if (data.Nickname !== null) {
+                    $('#nickName').val(data.Nickname);
+                }
+                if (data.HeadImgUrl !== null) {
+                    toImage(data.HeadImgUrl);
+                    imgBiaoQian.innerHTML = "头像:";
+                }
+                if (data.Username !== null) {
+                    $('#userName').val(data.Username);
+                }
+                if (data.Password !== null) {
+                    $('#userPassWord').val(data.Password);
+                }
+            }
+
+            $('#grpcPayLoads').val(JSON.stringify(data));
+        }
+
+        function ProcessingMessages(data) {
+            var obj = JSON.parse(data);
+            var cmd = obj.cmd;
+            $('#cmd').val(obj.cmd);
+            $('#result').val(obj.result);
+            $('#msg').val(obj.msg);
+            $('#wechatApiId').val(obj.wechatApiId);
+            $('#randomId').val(obj.randomId);
+            $('#serverId').val(obj.serverId);
+            $('#account').val(obj.account);
+            $('#serverIp').val(obj.serverIp);
+            $('#serverPort').val(obj.serverPort);
+            $('#code').val(obj.code);
+            $('#timeStamp').val(obj.timeStamp);
+            console.log(obj.retdata);
+            var retdata = obj.retdata;
+            if (retdata != null) {
+                ProcessingData(cmd, retdata);
+            }
+            setDebug(data);
+
+        }
+        //连接关闭的回调方法
+        ws.onclose = function () {
+            setDebug("WebSocket 连接已关闭...")
+        };
+        //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+        ws.onbeforeunload = function () {
+            closeWebSocket();
+        };
+
+        function setDebug(dataReceive) {
+            console.log(dataReceive);
+            var oWords = document.getElementById('wechatReturn');
+            var today = new Date();
+            var timeString = today.toLocaleString();
+            if (oWords.length >= 65500) {
+                oWords = oWords.substring(0, 65500);
+            }
+            var sTalk = "<br/>" + timeString + ":[" + dataReceive + "]" + "<br/>";
+            oWords.innerHTML = oWords.innerHTML + sTalk;
+            oWords.scrollTop = oWords.scrollHeight;
+
+        }
+
+
+        function getWebSocket() {
+            if ('WebSocket' in window) {
+                setDebug("您的浏览器支持 WebSocket!");
+                if (code) {
+                    ws.close();
+                }
+                var serverIp = toUtf8(jQuery("#serverIp").val());
+                var serverPort = toUtf8(jQuery("#serverPort").val());
+                var account = toUtf8(jQuery("#account").val());
+                var host = "ws://" + serverIp + ":" + serverPort + "/websocket?" + account;
+                ws = new WebSocket(host);
+                setcode(true);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function setcode(codes) {
+            code = codes;
+        }
+
+        function sendMessage() {
+            var dataSend = oWin.val().trim();
+            ws.send(dataSend);
+            oWin.val('');
+        }
+
+        jQuery(function () {
+            jQuery('#imgBufUrl').qrcode(toUtf8("https://gitlab.wxipad.com/"));
+            canvasToImage();
+            jQuery("#create-btn").click(function () {
+                jQuery("#imgBufUrl").empty();	/*清空 #qrcode*/
+                var str = toUtf8(jQuery("#qrcodeUrl").val());
+                jQuery("#imgBufUrl").qrcode(str);
+                canvasToImage();	/*将canvas转换成图片然后插入*/
+            });
+        });
+
+        /*
+        *canvasToImage:函数将canvas中的内容转换成png图像，然后在浏览器中就可以右击(手机中长按)->保存
+        */
+        function canvasToImage() {
+            var mycanvas = document.getElementsByTagName("canvas");
+            var image = mycanvas[0].toDataURL("image/png");
+            toImage(image);
+        }
+
+        function toImage(image) {
+            var ement = "<img height='200' width='200' src='" + image + "'>";
+            jQuery("#imgBufUrl").empty();
+            jQuery("#imgBufUrl").append(ement);
+        }
+
+
+        //获取验证码
+        /*function getVerify(obj){
+            obj.src =  "login/getVerify?"+Math.random();//原生js方式
+        }*/
+
+        function getVerify() {
+            // $("#imgCode").on("click", function() {
+            $("#imgVerify").attr("src", 'login/getVerify?' + Math.random());//jquery方式
+            // });
+        }
+
+        function getQrcode() {
+            // $("#imgCode").on("click", function() {
+            $("#imgBufUrl").attr("src", 'login/getQrcodey?' + Math.random());//jquery方式
+            // });
+        }
+
+        //将消息显示在网页上
+        function setMessageInnerHTML(innerHTML) {
+            document.getElementById('message').innerHTML += innerHTML + '<br/>';
+        }
+
+        //关闭WebSocket连接
+        function closeWebSocket() {
+            websocket.close();
+        }
+
+        //请求接口
+        function requestInterface() {
+
+
+            var oldStr = $('#wechatApiMsg').html();
+            ws.send(oldStr);
+        }
+
+        function getWechatApiMsg() {
+            var wechatapimsg = JSON.parse('{\n' +
+                '    "Msg": "",\n' +
+                '    "account": "",\n' +
+                '    "accountAppId": "",\n' +
+                '    "accountAppKey": "",\n' +
+                '    "accountTocken": "",\n' +
+                '    "accountcode": "",\n' +
+                '    "autoLogin": "",\n' +
+                '    "callbackAddRes": "",\n' +
+                '    "cmd": 0,\n' +
+                '    "cmdname": "",\n' +
+                '    "code": "",\n' +
+                '    "grpcBaseMsg": "",\n' +
+                '    "grpcPayLoads": "",\n' +
+                '    "grpcUser": "",\n' +
+                '    "grpcWechatMsg": "",\n' +
+                '    "longHost": "",\n' +
+                '    "nickName": "",\n' +
+                '    "protocolVer": 0,\n' +
+                '    "randomId": "",\n' +
+                '    "result": "",\n' +
+                '    "serverId": "",\n' +
+                '    "serverIp": "",\n' +
+                '    "serverPort": 0,\n' +
+                '    "shortHost": "",\n' +
+                '    "softwareId": "",\n' +
+                '    "timeStamp": 0,\n' +
+                '    "userA16": "",\n' +
+                '    "userData": "",\n' +
+                '    "userName": "",\n' +
+                '    "userPassWord": "",\n' +
+                '    "userUuid": "",\n' +
+                '    "wechatApiId": ""\n' +
+                '}');
+            var str = toUtf8(jQuery("#account").val());
+            if (str != null) {
+                wechatapimsg.account = str;
+            }
+            str = toUtf8(jQuery("#accountAppId").val());
+            if (str != null) {
+                wechatapimsg.accountAppId = str;
+            }
+            str = toUtf8(jQuery("#accountAppKey").val());
+            if (str != null) {
+                wechatapimsg.accountAppKey = str;
+            }
+            str = toUtf8(jQuery("#accountTocken").val());
+            if (str != null) {
+                wechatapimsg.accountTocken = str;
+            }
+            str = toUtf8(jQuery("#callbackAddRes").val());
+            if (str != null) {
+                wechatapimsg.callbackAddRes = str;
+            }
+            str = toUtf8(jQuery("#grpcPayLoads").val());
+            if (str != null) {
+                wechatapimsg.grpcPayLoads = str;
+            }
+            str = toUtf8(jQuery("#randomId").val());
+            if (str != null) {
+                wechatapimsg.randomId = str;
+            }
+            str = toUtf8(jQuery("#serverId").val());
+            if (str != null) {
+                wechatapimsg.serverId = str;
+            }
+            str = toUtf8(jQuery("#serverIp").val());
+            if (str != null) {
+                wechatapimsg.serverIp = str;
+            }
+            str = toUtf8(jQuery("#softwareId").val());
+            if (str != null) {
+                wechatapimsg.softwareId = str;
+            }
+            str = toUtf8(jQuery("#userA16").val());
+            if (str != null) {
+                wechatapimsg.userA16 = str;
+            }
+            str = toUtf8(jQuery("#userData").val());
+            if (str != null) {
+                wechatapimsg.userData = str;
+            }
+            str = toUtf8(jQuery("#userName").val());
+            if (str != null) {
+                wechatapimsg.userName = str;
+            }
+            str = toUtf8(jQuery("#userPassWord").val());
+            if (str != null) {
+                wechatapimsg.userPassWord = str;
+            }
+            wechatapimsg.cmd = jQuery("#cmd").val() - 0;
+            wechatapimsg.protocolVer = jQuery("#protocolVer").val() - 0;
+            wechatapimsg.serverPort = jQuery("#serverPort").val() - 0;
+            return JSON.stringify(wechatapimsg);
+        }
+
+        function setWechatReturn(data) {
+            var obj = JSON.parse(data);
+            $('#result').val(obj.result);
+            $('#serverIp').val(obj.serverIp);
+            $('#serverPort').val(obj.serverPort);
+            $('#serverId').val(obj.serverId);
+            $('#code').val(obj.code);
+            $('#sercmd').val("返回 cmd:" + obj.cmd);
+            $('#randomId').val(obj.randomId);
+            $('#account').val(obj.account);
+            $('#msg').val(obj.msg);
+            $('#timeStamp').val(obj.timeStamp);
+            $('#wechatApiId').val(obj.wechatApiId);
+            $('#grpcPayLoads').val(JSON.stringify(obj.retdata));
+            setDebug(data)
+        }
+
+
+    </script>
+    <script>
+        <!--这个cg就是span的id 初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。-->
+        setInterval("cg.innerHTML='当前时间:' + new Date().toLocaleString()", 1000);
+    </script>
+    <script type="text/javascript">
+
+
+    </script>
+
+</div>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false">
+    <!--
+        开发环境使用默认配置即可
+        /org/springframework/boot/logging/logback/file-appender.xml
+        /org/springframework/boot/logging/logback/console-appender.xml
+        org/springframework/boot/logging/logback/defaults.xml
+    -->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!-- 自定义属性 -->
+    <property name="appName" value="websocket"/>
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{0}:%L%X{serialNo}- %msg%n"/>
+
+    <!--开发环境才打印sql-->
+    <springProfile name="dev">
+        <!-- sql日志配置 -->
+        <logger name="com.hfinal.notes.mapper" level="DEBUG"/>
+        <logger name="java.sql.Connection" level="DEBUG"/>
+        <logger name="java.sql.Statement" level="DEBUG"/>
+        <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+    </springProfile>
+
+    <!--生产环境才生成日志文件-->
+    <springProfile name="pro">
+        <property name="logHome" value="/home/logs/${appName}"/>
+        <!--多环境需要生成日志时,可以优化-->
+        <!-- info级别的日志appender,这里把所有日志都输出到一个文件，没有区分不同的业务类型 -->
+        <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="${appName}-info">
+            <file>${logHome}/${appName}-info.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${logHome}/${appName}-info.log.%d{yyyy-MM-dd}.%i
+                </fileNamePattern>
+                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                    <maxFileSize>1024MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${pattern}</pattern>
+            </encoder>
+        </appender>
+        <!-- error级别日志appender -->
+        <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="${appName}-error">
+            <file>${logHome}/${appName}-error.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${logHome}/${appName}-error.log.%d{yyyy-MM-dd}.%i
+                </fileNamePattern>
+                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                    <maxFileSize>1024MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+            </rollingPolicy>
+            <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+                <level>ERROR</level>
+            </filter>
+            <encoder>
+                <pattern>${pattern}</pattern>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="${appName}-info"/>
+            <appender-ref ref="${appName}-error"/>
+        </root>
+    </springProfile>
+</configuration>

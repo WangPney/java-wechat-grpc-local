@@ -1,0 +1,360 @@
+/*
+ * 全局样式
+ */
+
+/* 链接 */
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+/* 自定义默认样式按钮 */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+    color: #333;
+    text-shadow: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+
+/*
+ * 基础框架
+ */
+
+html,
+body {
+    height: 100%;
+    background-color: #333;
+}
+
+body {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    font-family: "黑体";
+}
+
+
+.page {
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+}
+
+.page-inner {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.content {
+    padding: 0px;
+}
+
+.ImgBufUrl {
+    float: left;
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+}
+
+.talk_show {
+    width: 400px;
+    height: 100px;
+    border: 1px solid #666;
+    overflow: auto;
+}
+
+.WechatReturn {
+    margin-left: 230px;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 6px;
+    word-break: break-all;
+    height: 220px;
+    padding: 10px;
+}
+
+.setdebug {
+    margin-left: 930px;
+    white-space: normal;
+    overflow: hidden;
+    height: 280px;
+    padding: 10px;
+    word-break: break-all;
+}
+
+
+.protocolVer {
+    float: left;
+    width: 280px;
+}
+
+.LeftmostLeft2 {
+    float: left;
+    width: 570px;
+    border-radius: 6px;
+}
+
+.TheMostRight2 {
+    margin-left: 580px;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 6px;
+    word-break: break-all;
+}
+
+.LeftmostLeft {
+    float: left;
+    width: 280px;
+    border-radius: 6px;
+}
+
+
+.dingkuan {
+    width: 50px;
+}
+
+.biaoqian {
+    float: left;
+    overflow: hidden;
+    border-radius: 6px;
+    color: white;
+}
+
+.biaoqian1 {
+    margin-left: 230px;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 6px;
+    word-break: break-all;
+}
+
+.biaoqian2 {
+    float: left;
+    width: 570px;
+    overflow: hidden;
+    border-radius: 6px;
+    color: AppWorkspace;
+    background-color: white;
+}
+
+.biaoqian3 {
+    margin-left: 580px;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 6px;
+    word-break: break-all;
+}
+.Middle {
+    float: left;
+    margin-left: 10px;
+    width: 280px;
+    border-radius: 6px;
+}
+
+.TheMostRight {
+    margin-left: 870px;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 6px;
+    word-break: break-all;
+}
+
+.GrpcPayLoads {
+    float: left;
+    width: 570px;
+    height: 130px;
+    border-radius: 6px;
+}
+
+.WechatApiMsg {
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 6px;
+    word-break: break-all;
+    margin-left: 580px;
+    height: 130px;
+    padding: 10px;
+}
+
+.servers {
+    margin-left: 290px;
+    height: 280px;
+    white-space: normal;
+    padding: 10px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+
+.rightcontent {
+    margin-left: 290px;
+    height: 280px;
+    white-space: normal;
+    padding: 10px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+
+/*
+ * 网页头部
+ */
+.masthead-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+    display: inline-block;
+}
+
+.masthead-nav > li + li {
+    margin-left: 20px;
+}
+
+.masthead-nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    color: rgba(255, 255, 255, .75);
+    border-bottom: 2px solid transparent;
+}
+
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #a9a9a9;
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+@media (min-width: 1000px) {
+    .masthead-brand {
+        float: left;
+    }
+    .masthead-nav {
+        float: right;
+    }
+}
+
+#imgBufUrl {
+    margin-top: 0px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 6px;
+}
+
+/**max width 980px**/
+@media screen and (max-width: 1200px) {
+    .wrap {
+        width: 980px;
+    }
+}
+
+/**max1280px screen***/
+@media screen and (min-width: 1200px) {
+    .wrap {
+        width: 1200px;
+    }
+}
+
+
+#wechatReturn {
+    word-wrap: break-word;
+    margin-top: 0px;
+    color: #4cae4c;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #0C0C0C;
+    max-width: 100%;
+    overflow-y: auto;
+    border: 1px solid #333;
+}
+
+#grpcPayLoads {
+    word-wrap: break-word;
+    margin-top: 0px;
+    color: #010000;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    max-width: 100%;
+}
+
+#wechatApiMsg {
+    word-wrap: break-word;
+    margin-top: 0px;
+    color: #010000;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    max-width: 100%;
+}
+
+/*
+ * 页脚
+ */
+
+.mastfoot {
+    color: #999;
+    color: rgba(255, 255, 255, .5);
+}
+
+
+/*
+ * 居中
+ */
+
+@media (min-width: 1000px) {
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+
+    .mastfoot {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .page-inner {
+        vertical-align: middle;
+    }
+
+    .masthead,
+    .mastfoot,
+    .container {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .masthead,
+    .mastfoot,
+    .container {
+        width: 1400px;
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "serverport": 16425,
+  "Local": true,
+  "AppServer": "grpc.wxipad.com",
+  "AppPort": 12580,
+  "AppId": "",
+  "AppKey": "",
+  "AppToken": "",
+  "AppCert": "ca.crt",
+  "ApiServer": "grpc.wxipad.com",
+  "ApiPort": 12590,
+  "ApiId": "",
+  "ApiKey": "",
+  "ApiToken": "",
+  "ApiCert": null
+}
