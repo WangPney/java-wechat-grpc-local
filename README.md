@@ -1,11 +1,11 @@
-### Java Spring template project
+##Ipad协议704
 
-This project is based on a GitLab [Project Template](https://docs.gitlab.com/ee/gitlab-basics/create-project.html).
+**ipad协议提供web服务，免费源码部署服务，下载跑通即可本地运行**
+本地客户端源码 无收费服务，开发者免费研究使用，
 
-Improvements can be proposed in the [original project](https://gitlab.com/gitlab-org/project-templates/spring).
+目前主要功能：
+**扫码登录，62数据登录等 获取用户信息，用户相关信息（获取、搜索、添加、修改等） 通讯录消息，消息同步等 群相关操作（创群、添加成员、删除成员、退群等） 公众号相关操作等 附件的人相关操作等 功能太多**
 
-### CI/CD with Auto DevOps
 
-This template is compatible with [Auto DevOps](https://docs.gitlab.com/ee/topics/autodevops/).
-
-If Auto DevOps is not already enabled for this project, you can [turn it on](https://docs.gitlab.com/ee/topics/autodevops/#enabling-auto-devops) in the project settings.
+**声明**
+**仅供自己学习研究使用，引起任何法律纠纷概不负责**
