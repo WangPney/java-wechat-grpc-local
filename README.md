@@ -17,7 +17,7 @@ C#版本，7.0.10版本，市场卖3W的，免费研究学习。
 <a href="http://49.234.86.244:8080/" target="_blank">http://49.234.86.244:8080/</a>
 
 ### 交流微信（go版本，线上稳定7.0.13版本）
- <img src="https://github.com/PonyCx/WechatHelper7010/blob/master/1.jpg" width = "350" height = "350" alt="" align=center />
+ <img src="http://47.98.226.166:81/1.jpg" width = "350" height = "350" alt="" align=center />
 
 
 
