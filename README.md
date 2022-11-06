@@ -14,9 +14,7 @@
 开源的源码仅供自己学习研究使用，已删除核心部分，引起任何法律纠纷概不负责
 
 ### 商用接口文档(这个测试环境是java源码827版本 独此一家)
-http://www.docway.net/project/1ZMfK5aIQfQ/1drMIK1d4PA
-
-具体测试请QQ联系:897385237
+https://www.yuque.com/eyunguanjia/lb2e7b/jieruzhinan?# 《接入指南》 密码：ykl3
 
 合作方式：测试的接口文档是JAVA 826版本，带技术支持及后续升级服务，不售卖源码，不出售红包转账类接口，正规企业合作，合作需营业执照及产品，黑灰绕道，欢迎淘客、SCRM、微商客户！
 
