@@ -21,7 +21,7 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<grpc.version>1.18.0</grpc.version>
+		<grpc.version>1.53.0</grpc.version>
 	</properties>
 	<dependencies>
 		<dependency>
